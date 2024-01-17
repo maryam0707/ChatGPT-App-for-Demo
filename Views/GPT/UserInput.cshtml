@@ -1,0 +1,64 @@
+﻿@model ChatGPT_App.Models.SentencePayload
+
+@{
+    ViewData["Title"] = "UserInput";
+}
+
+<h3>ChatGPT POC</h3>
+
+<hr />
+<div class="row">
+    
+        <form asp-action="UserInput">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group left-side">
+                <label asp-for="question" class="control-label">Ask ChatGPT</label>
+                <input asp-for="question" class="form-control ask-input" />
+            </div>
+            <div class="form-group right-side">
+                <label asp-for="answer" class="control-label">ChatGPT Says</label>
+                <textarea asp-for="answer" class="form-control"></textarea>
+            </div>
+            <div class="form-group p-1 left-side">
+                <input type="submit" value="Ask" class="btn btn-primary ask-btn" />
+            </div>
+        </form>
+    
+</div>
+<style>
+    .control-label{
+        text-align:center;
+    }
+    .left-side{
+        display:flex;
+        float:left;
+        width:48%;
+        flex-direction:column;
+    }
+    .ask-input{
+        min-height:90px !important;
+    }
+    .right-side {
+        display: flex;
+        float: right;
+        width: 50%;
+        flex-direction:column;
+
+    }
+    textarea.form-control{
+        min-height:128px !important;
+    }
+    .ask-btn{
+        background: #9E2527;
+        border-radius: 8px;
+        border: 1px solid #9E2527;
+    }
+
+        .ask-btn:hover,.btn:active,.btn:focus-visible {
+            color: #9E2527;
+        background: #fff;
+    }
+
+
+</style>
+
